@@ -22,14 +22,34 @@ double get_sphere_volume(double radius) {
 using namespace std;
 
 int main() {
+	//makes the variables to enter into the equations
+	double moles;
+	double temperature;
+	double volume;
 
-	double pressure = get_pressure(2.5,298,5.0);
+	cout << "Give some values to find the pressure of a system" << endl;
+	//prompts the user for the variables
+
+	//stores them
+	cout << "Give the moles: ";
+	cin >> moles;
+	cout << "Give the temperature (Kelvin): ";
+	cin >> temperature;
+	cout << "Give the volume (Liters): ";
+	cin >> volume;
 	
-	cout << "The pressure using ideal gas law is: " << pressure << endl;
-	
-	double volume = get_sphere_volume(5.0);
-	
-	cout << "The volume of a sphere given radius 5 is: " << volume << endl;
+	//gets the pressure and tells the user it
+	double pressure = get_pressure(moles,temperature,volume);
+	cout << "The pressure using ideal gas law is: " << pressure << "atm" << endl;
+
+	//makes and gets the radius of the sphere from the user
+	double radius;
+	cout << "Give the radius of the sphere who's volume you are needed to compute";
+	cin >> radius;
+
+	//computes and returns the volume of the sphere
+	double volume_of_sphere = get_sphere_volume(radius);
+	cout << "The volume of a sphere given radius " << radius << " is: " << volume_of_sphere << endl;
 
 	return 0;
 }

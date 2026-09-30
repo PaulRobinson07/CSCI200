@@ -1,19 +1,19 @@
 # COMMENTS BEGIN WITH A HASH
 
 # THE NAME OF YOUR PROJECT
-PROJECT = A1
+PROJECT = A2 
 # ALL CPP COMPILABLE IMPLEMENTATION FILES THAT MAKE UP THE PROJECT
-SRC_FILES = main.cpp 
+SRC_FILES = main.cpp samodelkin.cpp
 # ALL HEADER FILES THAT ARE PART OF THE PROJECT
-H_FILES = 
+H_FILES = samodelkin.h
 # ANY OTHER RESOURCES FILES THAT ARE PART OF THE PROJECT
 REZ_FILES = 
 # YOUR USERNAME
-USERNAME = paul_robinson 
+USERNAME = Paul_Robinson
 
 # NO EDITS BELOW THIS LINE
 CXX = g++
-CXXFLAGS_DEBUG = -g
+CXXFLAGS_DEBUG = -g -O0
 CXXFLAGS_WARN = -Wall -Wextra -Wconversion -Wdouble-promotion -Wunreachable-code -Wshadow -Wpedantic
 CPPVERSION = -std=c++17
 
@@ -55,7 +55,7 @@ depend:
 	@sed -i.bak '/^# DEPENDENCIES/,$$d' Makefile
 	@$(DEL) sed*
 	@echo $(Q)# DEPENDENCIES$(Q) >> Makefile
-	@$(CXX) -MM $(SRC_FILES) >> Makefile
+	@$(CXX) $(CPPVERSION) -MM $(SRC_FILES) >> Makefile
 
 submission:
 	@echo "Creating submission file $(ZIP_NAME) ..."
