@@ -184,6 +184,7 @@ void goto_new_room(int* current_room, int room_count) {
 
 //acts based on the room the player is currently in
 void enter_room(int* room_number, int* health, bool* has_key, bool* has_weapon, Game_State* game_state) {
+	if (*health <= 0) { return;}
 	//gives the player stats
 		cout << "Current room: " << *room_number << endl;
 		cout << "HP: " << *room_number << endl;
@@ -229,5 +230,4 @@ void enter_room(int* room_number, int* health, bool* has_key, bool* has_weapon, 
 			enemy_room(has_weapon, health, game_state);
 		break;
 	}
-
 }

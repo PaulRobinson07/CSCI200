@@ -11,7 +11,6 @@ int main() {
 	fin.open("data.txt");
 	ifstream saveFile("save.txt");
 	ifstream preferencesFile;
-
 	if(fin.fail()) {
 		cerr << "Unable to open file" << endl;
 		return -1;
