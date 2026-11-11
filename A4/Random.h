@@ -1,6 +1,7 @@
-#pragma once
-#include <random>
+#ifndef RANDOM_H
+#define RANDOM_H
 
+#include <random>
 
 //generates a random number generator to be available to all files
 namespace Random {
@@ -10,3 +11,5 @@ namespace Random {
 		return gen;
 	}
 }
+
+#endif
